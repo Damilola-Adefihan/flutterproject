@@ -27,6 +27,7 @@ class DetailsScreen extends StatelessWidget {
         child: Column(
           children: [
             HeaderComponent(),
+            CoffeeImageComponent(),
           ],
         ),
       ),
@@ -50,7 +51,7 @@ class HeaderComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0), // Adjust horizontal padding
+      padding: const EdgeInsets.symmetric(horizontal: 13.0), // Adjust horizontal padding
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween, // Align items evenly
         children: [
@@ -76,4 +77,19 @@ class HeaderComponent extends StatelessWidget {
   }
 }
 
+class CoffeeImageComponent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Get the screen width
+    double screenWidth = MediaQuery.of(context).size.width;
+    
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 13.0),
+      child: Image.asset(
+        "assets/images/coffee_img.jpg",
+        width: screenWidth * 2.0,
+      ),
+    );
+  }
+}
 
