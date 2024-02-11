@@ -31,8 +31,11 @@ class DetailsScreen extends StatelessWidget {
             NameComponent(),
             NameDescriptionComponent(),
             RatingComponent(),
+            DividerComponent(),
             DescriptionComponent(),
             DescriptionTextComponent(),
+            SizeComponent(),
+            CoffeeSizeComponent(),
           ],
         ),
       ),
@@ -56,11 +59,13 @@ class HeaderComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 13.0), // Adjust horizontal padding
+      padding: const EdgeInsets.symmetric(
+          horizontal: 13.0), // Adjust horizontal padding
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween, // Align items evenly
         children: [
-          IconButton( // Adjust the width of the IconButton
+          IconButton(
+            // Adjust the width of the IconButton
             onPressed: () {},
             icon: Image.asset("assets/images/arrow_left.jpg"),
           ),
@@ -72,7 +77,8 @@ class HeaderComponent extends StatelessWidget {
               fontFamily: "Sora",
             ),
           ),
-          IconButton( // Adjust the width of the IconButton
+          IconButton(
+            // Adjust the width of the IconButton
             onPressed: () {},
             icon: Image.asset("assets/images/heart.jpg"),
           ),
@@ -87,9 +93,9 @@ class CoffeeImageComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     // Get the screen width
     double screenWidth = MediaQuery.of(context).size.width;
-    
+
     return Padding(
-      padding: const EdgeInsets.only(bottom: 13.0),
+      padding: const EdgeInsets.only(bottom: 2.0),
       child: Image.asset(
         "assets/images/coffee_img.jpg",
         width: screenWidth * 2.0,
@@ -102,7 +108,7 @@ class NameComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 50.0),
+      padding: const EdgeInsets.only(left: 30.0),
       child: Row(
         children: [
           Text(
@@ -123,7 +129,7 @@ class NameDescriptionComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 50.0, top: 3.0),
+      padding: const EdgeInsets.only(left: 30.0, top: 3.0),
       child: Row(
         children: [
           Text(
@@ -141,11 +147,24 @@ class NameDescriptionComponent extends StatelessWidget {
   }
 }
 
+class DividerComponent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 15,
+      width: 350,
+      child: Divider(
+        color: Colors.grey[300],
+      ),
+    );
+  }
+}
+
 class RatingComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 50.0),
+      padding: const EdgeInsets.only(left: 30.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -207,13 +226,11 @@ class RatingComponent extends StatelessWidget {
 
 
 
-
-
 class DescriptionComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 50.0, top: 5.0),
+      padding: const EdgeInsets.only(left: 30.0, top: 5.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -231,39 +248,41 @@ class DescriptionComponent extends StatelessWidget {
   }
 }
 
+
 class DescriptionTextComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Get the screen width
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Padding(
-      padding: const EdgeInsets.only(left: 50.0, top: 10),
+      padding: const EdgeInsets.only(left: 30.0, top: 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: 250.0,
-            child: Expanded(
-              child: RichText(
-                textAlign: TextAlign.justify,
-                softWrap: true,
-                text: TextSpan(
-                  style: TextStyle(
-                    fontSize: 11.8,
-                    color: Colors.grey,
-                    fontFamily: "Sora",
-                  ),
-                  children: [
-                    TextSpan(
-                      text:
-                          "A cappuccino is an approximately 150ml (5 oz) beverage, with 25ml of espresso coffee and 85ml of fresh milk. The fo...",
-                    ),
-                    TextSpan(
-                      text: "Read More",
-                      style: TextStyle(
-                        color: Color.fromARGB(218, 144, 65, 36),
-                      ),
-                    ),
-                  ],
+            width: screenWidth * 0.8, // Set the width to 80% of the screen width
+            child: RichText(
+              textAlign: TextAlign.justify,
+              softWrap: true,
+              text: TextSpan(
+                style: TextStyle(
+                  fontSize: 11.8,
+                  color: Colors.grey,
+                  fontFamily: "Sora",
                 ),
+                children: [
+                  TextSpan(
+                    text:
+                        "A cappuccino is an approximately 150ml (5 oz) beverage, with 25ml of espresso coffee and 85ml of fresh milk. The fo...",
+                  ),
+                  TextSpan(
+                    text: "Read More",
+                    style: TextStyle(
+                      color: Color.fromARGB(218, 144, 65, 36),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -272,3 +291,112 @@ class DescriptionTextComponent extends StatelessWidget {
     );
   }
 }
+
+
+class SizeComponent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 30.0, top: 10.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Size",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16.0,
+              color: Colors.black,
+              fontFamily: "Sora",
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+class CoffeeSizeComponent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Get the screen width
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    return SizedBox(
+      
+      width: screenWidth, // Set the width to match the screen width
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          // Adjusted containers to fit the screen width
+          Container(
+            width: screenWidth * 0.25, // Adjust the percentage as needed
+            height: 35.0,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                style: BorderStyle.solid,
+                color: Colors.grey,
+              ),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Text(
+              "S",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: "Sora",
+                fontSize: 14.0,
+              ),
+            ),
+          ),
+          Container(
+            width: screenWidth * 0.25, // Adjust the percentage as needed
+            height: 35.0,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(104, 210, 184, 174),
+              border: Border.all(
+                style: BorderStyle.solid,
+                color: const Color.fromARGB(218, 144, 65, 36),
+              ),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Text(
+              "M",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: "Sora",
+                fontSize: 14.0,
+                color: Color.fromARGB(218, 144, 65, 36),
+              ),
+            ),
+          ),
+          Container(
+            width: screenWidth * 0.25, // Adjust the percentage as needed
+            height: 35.0,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                style: BorderStyle.solid,
+                color: Colors.grey,
+              ),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Text(
+              "L",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: "Sora",
+                fontSize: 14.0,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
