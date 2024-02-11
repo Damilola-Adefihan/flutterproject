@@ -225,8 +225,6 @@ class RatingComponent extends StatelessWidget {
   }
 }
 
-
-
 class DescriptionComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -249,7 +247,6 @@ class DescriptionComponent extends StatelessWidget {
   }
 }
 
-
 class DescriptionTextComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -262,7 +259,8 @@ class DescriptionTextComponent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: screenWidth * 0.8, // Set the width to 80% of the screen width
+            width:
+                screenWidth * 0.8, // Set the width to 80% of the screen width
             child: RichText(
               textAlign: TextAlign.justify,
               softWrap: true,
@@ -293,12 +291,12 @@ class DescriptionTextComponent extends StatelessWidget {
   }
 }
 
-
 class SizeComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30.0, top: 10.0, right: 30.0, bottom: 10.0),
+      padding: const EdgeInsets.only(
+          left: 30.0, top: 10.0, right: 30.0, bottom: 10.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -316,7 +314,6 @@ class SizeComponent extends StatelessWidget {
     );
   }
 }
-
 
 class CoffeeSizeComponent extends StatelessWidget {
   @override
@@ -396,12 +393,12 @@ class CoffeeSizeComponent extends StatelessWidget {
   }
 }
 
-
 class BuyComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30.0, top: 25.0, right: 30.0, bottom: 15.0),
+      padding: const EdgeInsets.only(
+          left: 30.0, top: 25.0, right: 30.0, bottom: 15.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
