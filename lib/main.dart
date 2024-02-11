@@ -36,6 +36,7 @@ class DetailsScreen extends StatelessWidget {
             DescriptionTextComponent(),
             SizeComponent(),
             CoffeeSizeComponent(),
+            BuyComponent(),
           ],
         ),
       ),
@@ -95,10 +96,10 @@ class CoffeeImageComponent extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Padding(
-      padding: const EdgeInsets.only(bottom: 2.0),
+      padding: const EdgeInsets.only(bottom: 0.0),
       child: Image.asset(
         "assets/images/coffee_img.jpg",
-        width: screenWidth * 2.0,
+        width: screenWidth * 2.5,
       ),
     );
   }
@@ -115,7 +116,7 @@ class NameComponent extends StatelessWidget {
             "Cappuccino",
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 15.0,
+              fontSize: 20.0,
               fontFamily: "Sora",
             ),
           )
@@ -199,7 +200,7 @@ class RatingComponent extends StatelessWidget {
             ],
           ),
           Column(
-            children: [SizedBox(width: 60)],
+            children: [SizedBox(width: 160)],
           ),
           Container(
             width: 43.0,
@@ -297,7 +298,7 @@ class SizeComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30.0, top: 10.0),
+      padding: const EdgeInsets.only(left: 30.0, top: 10.0, right: 30.0, bottom: 10.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -320,19 +321,14 @@ class SizeComponent extends StatelessWidget {
 class CoffeeSizeComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Get the screen width
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return SizedBox(
-      
-      width: screenWidth, // Set the width to match the screen width
+      width: 600.0,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          // Adjusted containers to fit the screen width
           Container(
-            width: screenWidth * 0.25, // Adjust the percentage as needed
-            height: 35.0,
+            width: 100.0,
+            height: 40.0,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -352,8 +348,8 @@ class CoffeeSizeComponent extends StatelessWidget {
             ),
           ),
           Container(
-            width: screenWidth * 0.25, // Adjust the percentage as needed
-            height: 35.0,
+            width: 100.0,
+            height: 40.0,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: const Color.fromARGB(104, 210, 184, 174),
@@ -374,8 +370,8 @@ class CoffeeSizeComponent extends StatelessWidget {
             ),
           ),
           Container(
-            width: screenWidth * 0.25, // Adjust the percentage as needed
-            height: 35.0,
+            width: 100.0,
+            height: 40.0,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -400,3 +396,68 @@ class CoffeeSizeComponent extends StatelessWidget {
   }
 }
 
+
+class BuyComponent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 30.0, top: 25.0, right: 30.0, bottom: 15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: .5, bottom: 5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Price",
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  Text(
+                    "\$ 4.53",
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Sora",
+                      color: Color.fromARGB(218, 144, 65, 36),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Container(
+            width: 190.0,
+            height: 45.0,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(218, 144, 65, 36),
+              border: Border.all(style: BorderStyle.none, color: Colors.grey),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Text(
+              "Buy Now",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: "Sora",
+                fontSize: 14.0,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
