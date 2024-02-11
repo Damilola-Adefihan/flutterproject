@@ -1,16 +1,37 @@
-# flutterproject
+# Flutter Project - Cappucino
 
-A new Flutter project.
+### Instruction
 
-## Getting Started
+Reproduce the Detail screen below in Flutter.
 
-This project is a starting point for a Flutter application.
+<img width="414" alt="Cappucino" src="https://github.com/wptechprodigy/capuccino/assets/22558674/2ffe4613-e0dc-439d-b4f7-8c6199e719ee">
 
-A few resources to get you started if this is your first Flutter project:
+### How to complete the task
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Clone the repo and work on your copy
+- Design the screen above using your knowledge of layout. 
+- Download the app fonts from [here](https://fonts.google.com/specimen/Sora?query=sora)
+- Carefully select and use from the colors listed below:
+    -  2F2D2C
+    -  C67C4E
+    -  FBBE21
+    -  9B9B9B
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### What would be graded?
+
+- Your ability to design the view above and have it display static data. 
+- Your ability to break the design down into reusable widget - good code structuring
+- _Commit at meaningful points_ such as after adding the Image (Hero) section, then after the Title section and so on.
+
+### Please find UI assets for your application here. 
+
+https://drive.google.com/drive/folders/1J0xqrc8vNW8KNkmFs1uCB08FVvaROkQl?usp=drive_link
+
+### Submission Requirements
+
+- After completion, create a `SOLUTION.md` file and add it to your repo.
+- Add a description of your project and a screenshot of your final project after running the app, as I have added the design above.
+
+#### PS
+
+Feel free to make use of git as you wish, I only selected those steps to guide you. 
